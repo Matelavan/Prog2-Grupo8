@@ -24,9 +24,10 @@ module.exports = function(sequelize, DataTypes) {
         Product.belongsTo(models.user, {
             as: "user", 
             foreignKey: "user_id"
-        })
+        });
 
     }
+
 
     return Product
 

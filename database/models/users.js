@@ -11,6 +11,13 @@ module.exports = function (sequelize, dataTypes){
         nombre: {
             type: dataTypes.STRING
         },
+        email: {
+            type: dataTypes.STRING,
+            
+        },
+        password: {
+            type: dataTypes.STRING
+        },
     }
 
     let config = {
