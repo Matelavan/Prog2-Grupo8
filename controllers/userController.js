@@ -16,7 +16,7 @@ const userController = {
 
         db.User.create(form)
         .then ((results) => {
-            return res.redirect("/usario/login");
+            return res.redirect("/users/login");
         })
         .catch((err) => {
             return console.log(err)
