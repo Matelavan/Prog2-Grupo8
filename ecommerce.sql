@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 20-11-2024 a las 04:08:19
+-- Tiempo de generación: 21-11-2024 a las 03:20:51
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -36,12 +36,14 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nombre` int(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -55,9 +57,9 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `user`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -71,9 +73,9 @@ ALTER TABLE `productos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `user`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
