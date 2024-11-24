@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const op = db.Sequelize.Op;
+const { Association } = require('sequelize');
 
 const indexController = {
 
@@ -8,7 +9,14 @@ const indexController = {
             order: [['createdAt', 'DESC']]
         }
 
-        db.Product.findAll(filtrado)
+        db.Product.findAll({
+            include: [
+              {
+                association: 'user',
+              },
+            ],
+            order: [["created_at", "DESC"]],
+          })
         .then(function(results){
             return res.render("index", {products: results})
         })
