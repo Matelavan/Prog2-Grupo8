@@ -28,10 +28,15 @@ app.use(session({
   secret: "Nuestro mensaje es secreto",
   resave: false ,
   saveUninitialized: true
-}))
+}));
 
 //res locals
-
+app.use(function(req, res, next){
+    if (req.session.user != undefined){
+      res.locals.user = req.session.user
+    }
+    return next();
+})
 
 
 app.use('/home', indexRouter);

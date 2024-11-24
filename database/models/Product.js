@@ -7,26 +7,26 @@ module.exports = function(sequelize, DataTypes){
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        titulo: {
             type: DataTypes.STRING,
            
         },
 
-        description: {
+        descripcion: {
             type: DataTypes.TEXT,
             
         },
 
-        image: {
+        imagen: {
             type: DataTypes.STRING,
           
         },
 
-        createdAt: {
+        created_at: {
             type: DataTypes.DATE, 
         },
 
-        updatedAt: {
+        deleted_at: {
             type: DataTypes.DATE,
         },
 
@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes){
         
      }
     let config = {
-        tableName : "products",
+        tableName : "productos",
         timestamps : false,
         underscored : true
     }
