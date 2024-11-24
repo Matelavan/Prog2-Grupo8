@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #454545;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -69,6 +69,12 @@ hr {
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
+}
+.logo-ecomm{
+  max-width: 900px; /* Limita el tamaño máximo de la imagen */
+  width: 300px; 
+  padding-right: 75%;
+  
 }
 
 .main-header_home-link,

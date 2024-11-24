@@ -27,7 +27,7 @@ const productoController = {
     store: function (req, res) {
         let producto = req.body;
 
-        db.Product.create(Product)
+        db.Product.create(producto)
             .then(function (results) {
                 return res.redirect("/products"); 
             })

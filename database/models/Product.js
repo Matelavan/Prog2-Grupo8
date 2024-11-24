@@ -22,14 +22,6 @@ module.exports = function(sequelize, DataTypes){
           
         },
 
-        created_at: {
-            type: DataTypes.DATE, 
-        },
-
-        deleted_at: {
-            type: DataTypes.DATE,
-        },
-
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false

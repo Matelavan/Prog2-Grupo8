@@ -32,9 +32,7 @@ CREATE TABLE `productos` (
   `titulo` varchar(30) DEFAULT '',
   `user_id` int(10) NOT NULL,
   `descripcion` varchar(85) DEFAULT NULL,
-  `imagen` varchar(1000) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `imagen` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
