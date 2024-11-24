@@ -17,18 +17,19 @@ const indexController = {
         })
     } ,
 
-    detalle: function(req,res){
-        let idProducto = req.params.id
-        let producto = {}
-        
-        for (let i = 0; i < db.Product.length; i++) {
-            if (idProducto == db.Product[i].id) {
-              producto = db.Movie[i];
-            }
-            
-          }
-        
-          return res.render("detalle", {singleProducto: producto})
+    detalle: function (req, res) {
+        let id = req.params.id;
+
+        db.Product.findByPk(id)
+            .then(function (producto) {
+                if (!producto) {
+                    return res.send("Producto no encontrado");
+                }
+                return res.render("detalle", { singleProducto: producto });
+            })
+            .catch(function (error) {
+                console.error(error)
+            });
     }
 }
 
