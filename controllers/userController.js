@@ -22,7 +22,7 @@ const userController = {
             }else{
                 let check = bcryptj.compareSync(form.password , results.password)
                 if(check){
-                    req.session.user = result.dataValues
+                    req.session.user = results.dataValues
                     return res.redirect("/")
                 } else{
                     return res.send("La contraseña es incorrecta")

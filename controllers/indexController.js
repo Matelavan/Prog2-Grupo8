@@ -32,8 +32,10 @@ const indexController = {
             .then(function (producto) {
                 if (!producto) {
                     return res.send("Producto no encontrado");
+                }else{
+                    return res.render("detalle", { singleProducto: producto })
                 }
-                return res.render("detalle", { singleProducto: producto });
+                
             })
             .catch(function (error) {
                 console.error(error)
