@@ -60,9 +60,8 @@ const userController = {
         if (results) {
             return res.send('Este mail ya ha sido registrado, utiliza otro por favor.');
         }
+        
      });
-
-
      form.password = bcryptj.hashSync(form.password, 10);
         db.User.create(form)
         .then ((results) => {
