@@ -11,17 +11,17 @@
 		 <%- include('./partials/header') %>
 	<% } %>
 
-	<% for( let i = 0; i < results.length; i++ ) { %>
+	<% for( let i = 0; i < Product.length; i++ ) { %>
 		<div class="col-12">
 			<section class="product-box">
-				<a href="/detalle/<% results[i].id %>">
+				<a href="/detalle/<% Product[i].id %>">
 					<article class="product-box_image">
-					<img src="<%= results[i].imagen %>" alt="<%= results[i].titulo %>">
+					<img src="<%= Product[i].imagen %>" alt="<%= Product[i].titulo %>">
 				</article>
 				<article class="product-box_data">
-					<h2><%= results[i].titulo %></h2>
-					<p><%= results[i].descripcion %></p>
-					<h3><a href="">Nombre de usuario: <% results[i].user_id %></a></h3>
+					<h2><%= Product[i].titulo %></h2>
+					<p><%= Product[i].descripcion %></p>
+					<h3><a href="">Nombre de usuario: <% Product[i].user_id %></a></h3>
 				</article>
 				</a>
 			</section>

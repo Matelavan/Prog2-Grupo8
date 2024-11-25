@@ -44,10 +44,10 @@ const productoController = {
       },
 
     search: function (req, res) {
-        let qs = req.query.Product;
+        let qs = req.query.search;
 
         let filtrado = {
-            where: [{ title: { [op.like]: `%${qs}%` } }],
+            where: [{ titulo: { [op.like]: `%${qs}%` } }],
             order: [['createdAt', 'DESC']],
             include: [{ model: db.User, as: 'user' }]
         };
@@ -55,7 +55,7 @@ const productoController = {
         db.Product.findAll(filtrado)
             .then(function (results) {
                 if (results.length > 0) {
-                    return res.render('search-results', { results: results });
+                    return res.render('search-results', { Product: results });
                 } else {
                     return res.send('No hay resultados para su criterio de búsqueda');
                 }
