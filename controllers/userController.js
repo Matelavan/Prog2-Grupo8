@@ -41,7 +41,10 @@ const userController = {
       },
     registerPost: function(req, res) {
        let form = req.body;
-       form.password = bcryptj.hashSync(form.password, 10);
+       let filtro = {
+        where: {email: form.email}
+    }
+
        if(req.body.nombre == "" ) {
         return res.send('usuario no puede estar vacío.'); 
      }
@@ -49,8 +52,18 @@ const userController = {
         return res.send('Email no puede estar vacío.'); 
      } 
        if(req.body.password == "" ) {
-        return res.send('debes poner una password'); 
+        return res.send('debes poner una password.'); 
      }
+     
+     db.User.findOne(filtro)
+    .then((results) => {
+        if (results) {
+            return res.send('Este mail ya ha sido registrado, utiliza otro por favor.');
+        }
+     });
+
+
+     form.password = bcryptj.hashSync(form.password, 10);
         db.User.create(form)
         .then ((results) => {
             return res.redirect("/users/login");

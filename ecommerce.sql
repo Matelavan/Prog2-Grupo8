@@ -46,12 +46,12 @@ CREATE TABLE productos (
 --
 
 INSERT INTO productos (id, titulo, user_id, descripcion, imagen, createdAt, updatedAt, deletedAt) VALUES
-(DEFAULT, 'licuadora', 2, 'Esta licuadora es la ultima del mercado y la mejor trituradora de alimentos', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL),
-(DEFAULT, 'Celular', 4, 'Este celular es el mas avanzado del mercado', 'img-samsung-galaxy-s10.jpg', DEFAULT, DEFAULT, NULL),
-(DEFAULT, 'licuadora', 2, 'Esta licuadora es la ultima del mercado y la mejor trituradora de alimentos', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL),
-(DEFAULT, 'licuadora', 2, 'Esta licuadora es la ultima del mercado y la mejor trituradora de alimentos', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL),
-(DEFAULT, 'licuadora', 2, 'Esta licuadora es la ultima del mercado y la mejor trituradora de alimentos', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL),
-(DEFAULT, 'licuadora', 2, 'Esta licuadora es la ultima del mercado y la mejor trituradora de alimentos', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL);
+(DEFAULT, 'Cafetera', 1, 'Esta cafetera tiene la funcion de frio calor.', 'img-cafetera-moulinex.jpg', DEFAULT, DEFAULT, NULL),
+(DEFAULT, 'Celular', 2, 'Este celular es el mas avanzado del mercado', 'img-samsung-galaxy-s10.jpg', DEFAULT, DEFAULT, NULL),
+(DEFAULT, 'Laptop', 3, 'La laptop con el procesador mas rapido!.', 'img-macbook-pro-2019.jpg', DEFAULT, DEFAULT, NULL),
+(DEFAULT, 'Televisor', 4, 'La TV con mejor resolucion.', 'img-tv-samsung-smart.jpg', DEFAULT, DEFAULT, NULL),
+(DEFAULT, 'Secador', 5, 'Este secador, seca el pelo en 5 minutos.', 'img-secador.jpg', DEFAULT, DEFAULT, NULL),
+(DEFAULT, 'Lavarropas',3, 'El lavarropas con mayor frecuencia del mercado.', 'img-lavarropas.jpg', DEFAULT, DEFAULT, NULL);
 -- --------------------------------------------------------
 
 --
@@ -61,7 +61,7 @@ INSERT INTO productos (id, titulo, user_id, descripcion, imagen, createdAt, upda
 CREATE TABLE users (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   nombre varchar(100) NOT NULL,
-  email varchar(100) NOT NULL,
+  email varchar(100) UNIQUE NOT NULL,
   password varchar(255) DEFAULT NULL
 ) 
 

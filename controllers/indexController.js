@@ -1,12 +1,13 @@
 const db = require('../database/models')
 const op = db.Sequelize.Op;
-const { Association } = require('sequelize');
+const { association } = require('sequelize');
 
 const indexController = {
 
     index: function(req,res){
 
         db.Product.findAll({
+            include: [{association: "user"}],
             order: [
                 ['createdAt', 'DESC']
             ],
@@ -23,6 +24,7 @@ const indexController = {
         let id = req.params.id;
 
         db.Product.findByPk(id)
+        
             .then(function (producto) {
                 if (!producto) {
                     return res.send("Producto no encontrado");
