@@ -27,7 +27,7 @@ const indexController = {
                 if (!producto) {
                     return res.send("Producto no encontrado");
                 }else{
-                    return res.render("detalle", { singleProducto: producto })
+                    return res.render("detalle", { Product: producto })
                 }
                 
             })
