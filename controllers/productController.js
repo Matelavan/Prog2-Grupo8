@@ -28,7 +28,7 @@ const productoController = {
         }
           
     },
-
+    
     store:function (req,res) {
         let product = req.body;
         db.Product.create(product)
@@ -83,21 +83,7 @@ const productoController = {
             });
     },
 
-    showUserProfile : function (req, res) {
-        let userId = req.params.id;
 
-        db.User.findByPk(userId)
-            .then(function (user) {
-                if (user) {
-                    return res.render('user-profile', { user: user });
-                } else {
-                    return res.send('Usuario no encontrado');
-                }
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    }
 };
 
 module.exports = productoController;

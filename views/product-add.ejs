@@ -30,9 +30,11 @@
 				  <input id="descripcion" class="input" type="text" name="descripcion" placeholder="Descripcion" required/>
 			  </div>
 			  <div class="input-container ic2">
-				<input id="image" class="input" type="text" name="imagen" placeholder="Agregar Imagen:" required/>
+				<input id="image" class="input" type="text" name="imagen" placeholder="Ruta de Imagen" required/>
 			</div>
-			<input type="hidden" name="user_id" value="1">
+			<div >
+				<input id="user_id" class="input" type="hidden" name="user_id" value="<%= locals.user.id %>" />
+			</div>
 				<button type="text" class="submit">Agregar Producto</button>
 	
 	

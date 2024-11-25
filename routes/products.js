@@ -10,7 +10,7 @@ router.post('/store', productController.store);
 
 router.get('/search', productController.search);
 router.post('/search', productController.showProductDetail);
-router.get('/id:/id', productController.showUserProfile);
+
 
 
 module.exports = router
