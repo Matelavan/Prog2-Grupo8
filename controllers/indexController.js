@@ -8,7 +8,7 @@ const indexController = {
 
         db.Product.findAll({
             order: [
-                ['createdAt', 'ASC']
+                ['createdAt', 'DESC']
             ],
         })
           .then(function(results){

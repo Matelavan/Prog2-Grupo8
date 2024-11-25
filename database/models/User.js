@@ -17,9 +17,7 @@ module.exports =  function(sequelize, dataTypes) {
         password : {
             type : dataTypes.STRING
         },
-        remember_token : {
-            type : dataTypes.STRING
-        },
+       
     };
 
     let config = {

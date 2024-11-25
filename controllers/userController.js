@@ -62,8 +62,8 @@ const userController = {
        },
     
     logOut: function(req, res) {
-        res.session.destroy();
-        return res.redirect("/home")
+        req.session.destroy();
+        return res.redirect("/")
        }
 }
 
