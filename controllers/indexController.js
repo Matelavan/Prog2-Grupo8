@@ -6,7 +6,11 @@ const indexController = {
 
     index: function(req,res){
 
-        db.Product.findAll()
+        db.Product.findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ],
+        })
           .then(function(results){
               return res.render("index", {Product: results})
           })
