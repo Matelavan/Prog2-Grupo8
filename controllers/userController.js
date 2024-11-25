@@ -1,7 +1,7 @@
 const db = require('../database/models')
 const op = db.Sequelize.Op;
 const bcryptj = require('bcryptjs');
-const { or } = require('sequelize');
+
 
 const userController = {
     login: function(req, res) {

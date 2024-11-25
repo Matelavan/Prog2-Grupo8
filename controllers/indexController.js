@@ -5,25 +5,15 @@ const { Association } = require('sequelize');
 const indexController = {
 
     index: function(req,res){
-        let filtrado = {
-            order: [['createdAt', 'DESC']]
-        }
 
-        db.Product.findAll({
-            include: [
-              {
-                association: 'user',
-              },
-            ],
-            order: [["created_at", "DESC"]],
+        db.Product.findAll()
+          .then(function(results){
+              return res.render("index", {Product: results})
           })
-        .then(function(results){
-            return res.render("index", {products: results})
-        })
-        .catch(function(error){
-            console.log(error)
-        })
-    } ,
+          .catch(function(error){
+              console.log(error)
+          })
+      },
 
     detalle: function (req, res) {
         let id = req.params.id;

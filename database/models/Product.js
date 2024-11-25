@@ -9,37 +9,26 @@ module.exports = function (sequelize, DataTypes) {
         },
         titulo: {
             type: DataTypes.STRING,
-            allowNull: false
+            
         },
         descripcion: {
-            type: DataTypes.TEXT,
-            allowNull: false
+            type: DataTypes.STRING,
+            
         },
         imagen: {
             type: DataTypes.STRING,
-            allowNull: true
+            
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            
         },
-        created_at: {
-            type: DataTypes.DATE,
-            allowNull: true
-        },
-        updated_at: {
-            type: DataTypes.DATE,
-            allowNull: true
-        },
-        deleted_at: {
-            type: DataTypes.DATE,
-            allowNull: true
-        }
+       
     };
 
     let config = {
         tableName: "productos",
-        timestamps: true, 
+        timestamps: false, 
         underscored: true, 
         paranoid: true 
     };
