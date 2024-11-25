@@ -12,12 +12,17 @@
 	<% } %>
 
 	<% for( let i = 0; i < results.length; i++ ) { %>
-		<div>
-			<section>
-				<a href="">
-					<img src="<%= results[i].image %>" alt="<%= results[i].title %>">
-					<h2><%= results[i].title %></h2>
-					<p><%= results[i].description %></p>
+		<div class="col-12">
+			<section class="product-box">
+				<a href="/detalle/<% results[i].id %>">
+					<article class="product-box_image">
+					<img src="<%= results[i].imagen %>" alt="<%= results[i].titulo %>">
+				</article>
+				<article class="product-box_data">
+					<h2><%= results[i].titulo %></h2>
+					<p><%= results[i].descripcion %></p>
+					<h3><a href="">Nombre de usuario: <% results[i].user_id %></a></h3>
+				</article>
 				</a>
 			</section>
 		</div>
