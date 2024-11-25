@@ -68,7 +68,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: blue;
 }
 .logo-ecomm{
   max-width: 900px; /* Limita el tamaño máximo de la imagen */

@@ -20,16 +20,23 @@ const indexController = {
           })
       },
 
-    detalle: function (req, res) {
+      detalle: function (req, res) {
         let id = req.params.id;
+        let filtrado = {
+            include: [
+            {association: "user"},
+            ]
+        }
+            
 
-        db.Product.findByPk(id)
         
+            db.Product.findByPk(id, filtrado)
             .then(function (producto) {
+                    
                 if (!producto) {
                     return res.send("Producto no encontrado");
                 }else{
-                    return res.render("detalle", { Product: producto })
+                    return res.render("product", { Product: producto })
                 }
                 
             })
