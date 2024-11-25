@@ -29,17 +29,19 @@ const productoController = {
           
     },
 
-    store: function (req, res) {
-        let producto = req.body;
-
-        db.Product.create(producto)
-            .then(function (results) {
-                return res.redirect("/products"); 
-            })
-            .catch(function (err) {
-                console.log(err); 
-            });
-    },
+    store:function (req,res) {
+        let product = req.body;
+        db.Product.create(product)
+        .then(function (results) {
+            return res.redirect("../");
+        })
+        .catch(function (err) {
+          console.log(err);
+          
+        })
+        
+        
+      },
 
     search: function (req, res) {
         let qs = req.query.Product;

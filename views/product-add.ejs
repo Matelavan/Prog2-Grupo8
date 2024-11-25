@@ -24,14 +24,15 @@
 			<h2 class="col-12">          <form class="form" action="/products/register" method="POST">
 				<div class="title">Crear Producto</div>
 				<div class="input-nombre">
-				  <input id="nombre" class="input" type="text" name="title" placeholder="Nombre" required/>
+				  <input id="nombre" class="input" type="text" name="titulo" placeholder="Nombre" required/>
 				</div>
 				<div class="input-descipcion">
 				  <input id="descripcion" class="input" type="text" name="descripcion" placeholder="Descripcion" required/>
 			  </div>
 			  <div class="input-container ic2">
-				<input id="image" class="input" type="text" name="image" placeholder="Agregar Imagen:" required/>
+				<input id="image" class="input" type="text" name="imagen" placeholder="Agregar Imagen:" required/>
 			</div>
+			<input type="hidden" name="user_id" value="1">
 				<button type="text" class="submit">Agregar Producto</button>
 	
 	
